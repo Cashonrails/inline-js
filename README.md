@@ -1,0 +1,1 @@
+# cashonrails-inlinejs
