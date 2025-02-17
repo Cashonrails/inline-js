@@ -3,6 +3,12 @@ FROM node:20-alpine
 # Create a non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
+# List all files in the app directory for debugging
+RUN ls -l /app 
+
+# Display the contents of package.json for debugging
+RUN cat /app/package.json 
+
 # Set working directory
 WORKDIR /app
 
