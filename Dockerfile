@@ -1,18 +1,18 @@
 FROM node:20-alpine
 
-# Create a non-root user
+# Create a non-root user for security
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-# List all files in the app directory for debugging
+# Create the /app directory
+RUN mkdir -p /app
+
+# List all files in the app directory for debugging (will fail since /app isn't created yet)
 RUN ls -l /app 
 
-# Display the contents of package.json for debugging
-RUN cat /app/package.json 
-
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Copy only package.json and package-lock.json first (for better caching)
+# Copy only package.json and package-lock.json first for better caching
 COPY package*.json ./
 
 # Install dependencies
@@ -42,7 +42,7 @@ RUN mkdir -p /app/dist && chown -R appuser:appgroup /app
 # Switch to the non-root user
 USER appuser
 
-# Run Tailwind build (uses npm run build)
+# Run Tailwind build
 RUN npm run build
 
 # Expose necessary port (change if needed)
