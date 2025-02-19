@@ -5,8 +5,8 @@
 
 const CashonrailsCheckout = (config) => {
     const libraryConfig = {
-        checkoutUrl: "https://cashonrails-checkout.vercel.app",
-        checkoutSources: ["https://cashonrails-checkout.vercel.app"],
+        checkoutUrl: "https://checkout.cashonrails.com",
+        checkoutSources: ["https://checkout.cashonrails.com"],
     }
 
     // Create Validate config function, with the following checks:
@@ -184,8 +184,8 @@ const CashonrailsCheckout = (config) => {
 
 const CashonRailsCheckoutWithAccessCode = (config) => {
     const libraryConfig = {
-        checkoutUrl: "https://cashonrails-checkout.vercel.app",
-        checkoutSources: ["https://cashonrails-checkout.vercel.app"],
+        checkoutUrl: "https://checkout.cashonrails.com",
+        checkoutSources: ["https://checkout.cashonrails.com"],
     }
 
     const validateConfig = () => {
